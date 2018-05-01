@@ -1,0 +1,19 @@
+<select class="btn-success form-control form-group">
+  <option value="allRecipes">All Recipes</option>
+  <option value="popularRecipes">Popular recipes</option>
+  <option value="inpopularRecipes" selected="selected">unpopular recipes</option>
+</select>
+
+<ul class="list-group">
+  <li *ngFor="let recipe of childRecipeList | completeness" class="list-group-item">
+    <h4>{{recipe.title}}
+      <button (click)="editButtonClicked(recipe)" class="btn btn-warning">Edit</button>
+    </h4>
+    <p class="lead">
+      <strong>ingredients:</strong> {{ recipe.ingredients}}
+    </p>
+    <p [class]="hotColor(recipe)">Directions: {{ recipe.directions}}</p>
+    <input *ngIf="recipe.popular === true" type="checkbox" checked (click)="toggleDone(recipe, false)" />
+    <input *ngIf="recipe.popular === false" type="checkbox" (click)="toggleDone(recipe, true)" />
+  </li>
+</ul>

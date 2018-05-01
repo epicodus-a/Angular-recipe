@@ -1,0 +1,10 @@
+  <div *ngIf="selectedRecipe">
+    <p class="mt-5">Recipe Popular? {{selectedRecipe.popular}}</p>
+    <div class="mt-5">
+      <h4 class="my-3">Edit {{selectedRecipe.title}}</h4>
+      <input [(ngModel)]="selectedRecipe.ingredients" class="form-control form-group" placeholder="enter recipe ingredients">
+      <input [(ngModel)]="selectedRecipe.directions" class="form-control form-group" placeholder="enter recipe description">
+      <button (click)="finishedEditing()" class="btn btn-outline-warning form-control">Save</button>
+    </div>
+  </div>
+

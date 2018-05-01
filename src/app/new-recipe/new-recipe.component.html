@@ -1,0 +1,17 @@
+<h1 class="mt-4">New Recipe</h1>
+<div>
+ <label>Enter Task Description:</label>
+ <input #newTitle placeholder="enter recipe name" class="form-control form-group">
+ <input #newIngredients placeholder="enter recipe ingredients, seperate with spaces" class="form-control form-group">
+ <input #newDirections placeholder="enter recipe directions" class="form-control form-group">
+</div>
+<div>
+  <label>How hot it should be:</label>
+  <select #newHot>
+    <option [value]="1"> Mild </option>
+    <option [value]="2"> Medium</option>
+    <option [value]="3"> Warning</option>
+    <option [value]="4"> Danger</option>
+  </select>
+  <button class="btn btn-outline-success form-control form-group" (click)="submitForm(newTitle.value, newDirections.value, newIngredients.value, newHot.value); newTitle.value='';newDirections.value='';newIngredients.value='';">Add</button>
+</div>

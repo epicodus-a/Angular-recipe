@@ -1,2 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<div class="container mt-5">
 
+
+  <app-recipe-list [childRecipeList]="masterRecipes" (clickSender)="editRecipe($event)"></app-recipe-list>
+  <app-edit-recipe [childSelectedRecipe]="selectedRecipe" (doneButtonClickedSender)="finishedEditing()"></app-edit-recipe>
+
+  <app-new-recipe (sendRecipe)="addRecipe($event)"></app-new-recipe>
+  <hr>
+
+
+</div>

@@ -1,16 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule }  from '@angular/forms';
+
+import { PopularPipe } from './popular.pipe';
+
 
 
 import { AppComponent } from './app.component';
+import { RecipeListComponent } from './recipe-list/recipe-list.component';
+import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
+import { NewRecipeComponent } from './new-recipe/new-recipe.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RecipeListComponent,
+    EditRecipeComponent,
+    NewRecipeComponent,
+    PopularPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
